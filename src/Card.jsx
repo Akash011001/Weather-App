@@ -37,7 +37,7 @@ function Card(props){
 
     const getData = function(city){
         
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c6929bca3c652fbff2adce4b70031fb1`).then((res)=>{
+        axios.get(`api`).then((res)=>{
             let tem = (res.data.main.temp-273.15+"").split('.')
             setWeather({loc:res.data.name+', '+res.data.sys.country, icon: getIcon(res.data.weather[0].id), temp: tem[0], weather:res.data.weather[0].main});
         }).catch((err)=>{
